@@ -247,7 +247,11 @@ in laravel we can refactor controller to different services.
 
 Close for modification open for extention we can get example laravel package vender we can not modify. which mean modify package without damage the package.
 
-5. Dependancy invesion p
+3. Liskov Substituation Principle (ආදේශ කිරීම)
+
+class should be interchangeable two classes implement same interface that can be divided without braking code.
+
+5. Dependency inversion principle (පෙරළීම)
 
 not keep depend on high level(ex: ui) to low level(ex: db connection)
 
