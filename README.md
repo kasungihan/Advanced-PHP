@@ -238,9 +238,19 @@ run test
 # SOLID Principle
 
 1. Single Responsibility
-   Source code write for one job in single function or method but it can be divided to smaller peaces resposible each separate method.
 
-in laravel we can refactor controller to different services
+Source code write for one job in single function or method but it can be divided to smaller peaces resposible each separate method.
+
+in laravel we can refactor controller to different services.
 
 2. Open-Closed Principle
-   Close for modification open for extention we can get example laravel package vender we can not modify. which mean modify package without damage the package.
+
+Close for modification open for extention we can get example laravel package vender we can not modify. which mean modify package without damage the package.
+
+5. Dependancy invesion p
+
+not keep depend on high level(ex: ui) to low level(ex: db connection)
+
+switchable - interface class
+switch on - parent class
+lightbulb / tv - child class
