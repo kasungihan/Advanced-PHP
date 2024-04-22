@@ -1,0 +1,17 @@
+{
+    "name": "kasungihan/php-design-patterns",
+    "description": "learning php design patterns step by step",
+    "autoload": {
+        "psr-4": {
+            "Kasungihan\\PhpDesignPatterns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kasun Gihan",
+            "email": "kasungihan.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
