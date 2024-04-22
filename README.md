@@ -251,9 +251,15 @@ Close for modification open for extention we can get example laravel package ven
 
 class should be interchangeable two classes implement same interface that can be divided without braking code.
 
+4. Interface Segregation Principle (වෙන් කිරීම)
+
+Clients should not be forced to depend upon interface that they don't use, if interface have too many method violate.
+
+in Laravel ex: Jsonable, Switchable, Serviceable, HTMLable
+
 5. Dependency inversion principle (පෙරළීම)
 
-not keep depend on high level(ex: ui) to low level(ex: db connection)
+not keep depend on high level(ex: ui) to low level(ex: db connection). which interface not depend on concert implementation insead of class on abstration.
 
 switchable - interface class
 switch on - parent class
