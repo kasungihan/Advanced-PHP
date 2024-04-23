@@ -211,16 +211,6 @@ Keep in mind
 3. consistency
 4. Important domain concept
 
-# Composer
-
----
-
-dependency management of php
-own autoloader
-package version manage
-package discovery
-composer.lock install the dependacy find out offical poject
-
 # TestCase
 
 ---
@@ -237,30 +227,32 @@ run test
 
 # SOLID Principle
 
-1. Single Responsibility
+[Principle](./solid-principles/READMED.md)
 
-Source code write for one job in single function or method but it can be divided to smaller peaces resposible each separate method.
+# Composer
 
-in laravel we can refactor controller to different services.
+---
 
-2. Open-Closed Principle
+dependency management of php
+own autoloader
+package version manage
+package discovery
+composer.lock install the dependacy find out offical poject
 
-Close for modification open for extention we can get example laravel package vender we can not modify. which mean modify package without damage the package.
+Some packages are stand-alone
 
-3. Liskov Substituation Principle (ආදේශ කිරීම)
+- services
+- helpser
+- api sdk
 
-class should be interchangeable two classes implement same interface that can be divided without braking code.
+# Package Development
 
-4. Interface Segregation Principle (වෙන් කිරීම)
+Reasons for developing a package
 
-Clients should not be forced to depend upon interface that they don't use, if interface have too many method violate.
+- reusability
+- expandability - can be able to cutomiz
+- ease of interation
+- completed disconnent with main project
 
-in Laravel ex: Jsonable, Switchable, Serviceable, HTMLable
-
-5. Dependency inversion principle (පෙරළීම)
-
-not keep depend on high level(ex: ui) to low level(ex: db connection). which interface not depend on concert implementation insead of class on abstration.
-
-switchable - interface class
-switch on - parent class
-lightbulb / tv - child class
+1. `composer init`
+2. `composer require --dev "orchestra/testbench=^6.0"` // https://www.laravelpackage.com/02-development-environment/#orchestra-testbench
