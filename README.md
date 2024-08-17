@@ -256,3 +256,5 @@ Reasons for developing a package
 
 1. `composer init`
 2. `composer require --dev "orchestra/testbench=^6.0"` // https://www.laravelpackage.com/02-development-environment/#orchestra-testbench
+
+https://www.php-fig.org/psr/psr-7/
