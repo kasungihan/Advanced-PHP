@@ -1,0 +1,97 @@
+version: "3.8"
+services:
+  test:
+    build:
+      context: ./php-test-driven-development
+      dockerfile: Dockerfile
+    image: kasungihan/php-ttd
+    ports:
+      - "8071:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+      - redis
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+    networks:
+      - app
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    networks:
+      - app
+    depends_on:
+      - test
+      - db
+      - redis
+
+  db:
+    image: "mysql/mysql-server:8.0"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: codeview
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_USER: gihan
+      MYSQL_PASSWORD: 12345678
+      MYSQL_ROOT_PASSWORD: 12345678
+    volumes:
+      - data-mysql:/var/lib/mysql
+      - "./mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh"
+    networks:
+      - app
+    healthcheck:
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - "-p12345678"
+      retries: 3
+      timeout: 5s
+
+  redis:
+    image: "redis:7.2.4"
+    ports:
+      - "6379:6379"
+    volumes:
+      - "data-redis:/data"
+    networks:
+      - app
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      retries: 3
+      timeout: 5s
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8085:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: 12345678
+      MEMORY_LIMIT: 10242M
+      UPLOAD_LIMIT: 64M
+    networks:
+      - app
+    depends_on:
+      - db
+
+networks:
+  app:
+    driver: bridge
+
+volumes:
+  data-mysql:
+    driver: local
+  data-redis:
+    driver: local
