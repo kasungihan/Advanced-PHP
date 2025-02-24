@@ -48,11 +48,12 @@ keyword must use
 - static
 - parent
 - namespace
+- enum - similar like constants but use as a class
 
 ## constructor
 
-- \_\_constructor() allow you to initialze an object
-- \_\_destruct() - alow you to end an object excute
+- \_\_constructor() allow you to initialize an object
+- \_\_destruct() - alow you to end an object execute
 
 ## Access Modifiers
 
@@ -62,14 +63,14 @@ keyword must use
 
 ## Inheritance
 
-protected properties work on derived class(intertence) class not out side
+protected properties work on derived class(inheritance) class not out side
 
 inherited method can be override
 
 ## Constants
 
 scope resolution operator (::)
-recommand uppercase letter
+recommend uppercase letter
 
 ## Abstract Classes
 
@@ -85,13 +86,13 @@ a class must use the implement to implements keyword
 
 ## Traits
 
-single inheritance only one single class
+single inheritance only specified in one single class
 
-if clas edd multiple interit traits solve this problem
+if class getting bigger can be use traits set as a multiple inherit traits readability to more help solve this problem
 
 ## Static Methods
 
-class delcared as method and properties it use with scope resoulation operter(::)
+class declared as method and properties it use with **scope resolution operator**(::)
 
 ## Namespaces
 
@@ -106,40 +107,40 @@ Namespaces are qualifiers
 
 ## bottleneck of the project
 
-1. full meanningfull class name
-2. method argument fetach($billingId) => fetchByBillingId($id)
+1. full meaningful class name
+2. method argument fetch($billingId) => fetchByBillingId($id)
 
-preincrement ++i | postincrement i++
+pre-increment ++i | post-increment i++
 
 ## How to optimize
 
 1. measure
 2. try something
    1. data structures
-   2. profileers
-   3. think about unber the hood
+   2. profilers
+   3. think about under the hood
    4. think about memory
 3. measure again
 
 you should not nest your code - never nester
-methos to use denest
+methods to use de-nest
 
 1. extraction
-   2.inversion
+2. inversion
 
 ## Coding Rule
 
-- no abbreviations code - ex: paymenthod(-) == paymentMethod(+) don't ever use $x and $y varaible univuasal short name id fine like ID
+- no abbreviations code - ex: paymenthod(-) == paymentMethod(+) don't ever use $x and $y variable universal short name id fine like ID
   - bottleneck of the project
-    1. full meanningfull class name
-    2. method argument fetach($billingId) => fetchByBillingId($id)
+    1. full meaningful class name
+    2. method argument fetch($billingId) => fetchByBillingId($id)
 - don't use else - if you use return keyword, validation first then logic factory method can be used
-- one level of indentation - single responsiblity that can remove comment and can given a readable method
+- one level of indentation - single responsibility that can remove comment and can given a readable method
 
 ```php
 <?php
 
-function filterby($type)
+function filterBy($type)
 {
 	$data = [];
 	if(is_null($type) && $type == 'completed') // instead of this ofType($type)
@@ -154,7 +155,7 @@ function ofType($type)
 }
 ```
 
-- limit your instance vaiables
+- limit your instance variables
   way to many instant of one class at least keep 5 instance on class
   single responsibilities
 
@@ -212,14 +213,14 @@ function cache($data, Second $seconds)
 {
 
 }
-cache([], 60)// cache([], new Second(60))some people declear
+cache([], 60)// cache([], new Second(60))some people declare
 
 ```
 
 Keep in mind
 
 1. Does it bring clarity
-2. it ther behavior
+2. it their behavior
 3. consistency
 4. Important domain concept
 
@@ -249,12 +250,12 @@ dependency management of php
 own autoloader
 package version manage
 package discovery
-composer.lock install the dependacy find out offical poject
+composer.lock install the dependency find out official project
 
 Some packages are stand-alone
 
 - services
-- helpser
+- helpers
 - api sdk
 
 # Package Development
@@ -262,11 +263,13 @@ Some packages are stand-alone
 Reasons for developing a package
 
 - reusability
-- expandability - can be able to cutomiz
-- ease of interation
-- completed disconnent with main project
+- expandability - can be able to customize
+- ease of interaction
+- completed disconnect with main project
 
 1. `composer init`
 2. `composer require --dev "orchestra/testbench=^6.0"` // https://www.laravelpackage.com/02-development-environment/#orchestra-testbench
 
 https://www.php-fig.org/psr/psr-7/
+
+https://xdebug.org/docs/install

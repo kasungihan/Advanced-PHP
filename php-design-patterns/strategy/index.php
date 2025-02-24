@@ -2,6 +2,8 @@
 
 //use App\Charact\Dog;
 
+use App\Charact\Dog;
+
 include 'App/Charact/Dog.php';
 
 class App
