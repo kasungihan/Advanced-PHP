@@ -273,3 +273,7 @@ Reasons for developing a package
 https://www.php-fig.org/psr/psr-7/
 
 https://xdebug.org/docs/install
+
+## TDD
+
+Write automated tests before writing the actual code, ensuring that the code meets requirements and is robust.
